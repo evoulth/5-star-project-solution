@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-blue: #002B7F;
+  --color-brand-blue-dark: #001F5C;
+  --color-brand-blue-light: #E6EEFE;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-slate-900 bg-white;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.section-padding {
+  @apply py-20 px-6 md:px-12 lg:px-24;
+}
+
+.btn-primary {
+  @apply bg-brand-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-blue-dark transition-all duration-300 shadow-lg hover:shadow-brand-blue/20 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-brand-blue text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-blue-dark transition-all duration-300 shadow-lg hover:shadow-brand-blue/20 active:scale-95;
+}
+
+.btn-outline {
+  @apply border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-full font-semibold hover:bg-brand-blue hover:text-white transition-all duration-300 active:scale-95;
+}
+
+.logo-glow {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+  @apply transition-all duration-500;
+}
+
+.logo-glow:hover {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 43, 127, 0.15);
+}
+
+/* Glow on hover */
+.hover-glow:hover {
+  box-shadow: 0 0 0 3px rgba(0, 43, 127, 0.25);
+}
+
+/* Button scale press */
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  @apply transition-all duration-300 active:scale-95;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 43, 127, 0.35);
+}
+
+/* Icon bounce on card hover */
+.group:hover .icon-bounce {
+  animation: iconBounce 0.5s ease;
+}
+
+@keyframes iconBounce {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.25) rotate(-8deg);
+  }
+
+  80% {
+    transform: scale(0.95) rotate(4deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}

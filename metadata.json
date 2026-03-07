@@ -1,0 +1,7 @@
+{
+  "name": "5 Star Project Solution - Professional Cleaning Services",
+  "description": "Premium residential and commercial cleaning solutions. Professional, reliable, and trusted cleaning services for condos, gyms, offices, and public areas.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
