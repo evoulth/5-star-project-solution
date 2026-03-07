@@ -215,9 +215,7 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             Professional Cleaning Services <span className="text-brand-blue-light">You Can Trust</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-200 mb-8 md:mb-10 max-w-lg">
-            Residential & Commercial cleaning solutions tailored to your needs. Experience a spotless environment with our expert team.
-          </p>
+         
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#booking" className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto">
               Book a Cleaning <ArrowRight className="w-4 h-4" />
