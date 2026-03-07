@@ -61,32 +61,39 @@ interface FAQ {
 // --- Data ---
 const SERVICES: Service[] = [
   {
-    id: 'sweep',
-    title: 'Sweep, Mop & Vacuum Floors',
-    description: 'Thorough cleaning of all floor surfaces using professional equipment for a spotless finish.',
-    icon: <Droplets className="w-8 h-8" />,
-    image: 'https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&q=80&w=800'
+    id: 'condo',
+    title: 'Condo Cleaning Management',
+    description: 'Comprehensive cleaning management solutions for condominium complexes, ensuring a pristine and welcoming environment for all residents.',
+    icon: <Building2 className="w-8 h-8" />,
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'
   },
   {
-    id: 'disinfect',
-    title: 'Disinfect High-Touch Surfaces',
-    description: 'Specialized sanitization of door handles, light switches, and all frequently touched areas.',
-    icon: <Shield className="w-8 h-8" />,
-    image: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&q=80&w=800'
+    id: 'gym',
+    title: 'Gym Cleaner Available',
+    description: 'Specialized sanitation and cleaning for gym and fitness facilities, keeping equipment, floors, and changing rooms hygiene-perfect.',
+    icon: <Dumbbell className="w-8 h-8" />,
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800'
   },
   {
-    id: 'restroom',
-    title: 'Restroom & Common Area Cleaning',
-    description: 'Complete hygiene maintenance of sanitary facilities and shared residential spaces.',
-    icon: <CheckCircle2 className="w-8 h-8" />,
-    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'hygiene',
-    title: 'Maintain Hygiene Standards',
-    description: 'Continuous monitoring and maintenance to ensure the highest levels of property hygiene.',
-    icon: <Sparkles className="w-8 h-8" />,
+    id: 'public',
+    title: 'Public Area Cleaning',
+    description: 'High-standard cleaning of shared public spaces and common areas to maintain a safe, pleasant atmosphere for everyone.',
+    icon: <Users className="w-8 h-8" />,
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'corridor',
+    title: 'Corridor & Lobby Cleaning',
+    description: 'Professional upkeep of corridors, hallways, and lobbies — creating a great first impression and a spotless entryway every day.',
+    icon: <Home className="w-8 h-8" />,
+    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 'office',
+    title: 'Office & Commercial Cleaning',
+    description: 'Reliable daily or weekly office and commercial space cleaning to keep your workplace productive, healthy, and professional.',
+    icon: <Sparkles className="w-8 h-8" />,
+    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800'
   }
 ];
 
@@ -215,9 +222,6 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
             Professional Cleaning Services <span className="text-brand-blue-light">You Can Trust</span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-200 mb-8 md:mb-10 max-w-lg">
-            Residential & Commercial cleaning solutions tailored to your needs. Experience a spotless environment with our expert team.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#booking" className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto">
               Book a Cleaning <ArrowRight className="w-4 h-4" />
@@ -267,7 +271,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 md:gap-8">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.id}
