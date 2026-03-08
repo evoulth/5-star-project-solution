@@ -509,7 +509,7 @@ const Expectations = () => {
               Reliable • Efficient • Trusted
             </div>
             <h2 className="text-brand-blue font-black uppercase tracking-widest mb-4">What to Expect</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Professionalism in <span className="text-brand-blue">Detail</span></h3>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Where Professionalism <span className="text-brand-blue">Meets Passion</span></h3>
 
             <div className="bg-slate-50 p-8 rounded-[40px] border border-slate-100 mb-10">
               <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-6">Our Services Checklist:</h4>
