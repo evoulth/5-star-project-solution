@@ -180,8 +180,8 @@ const Stats = () => {
   ];
 
   return (
-    <section className="relative z-20 -mt-16 max-w-7xl mx-auto px-6">
-      <div className="bg-white rounded-[40px] shadow-2xl border border-slate-100 p-8 md:p-12 flex flex-wrap justify-center xl:justify-between items-center gap-8 md:gap-12">
+    <section className="relative z-20 -mt-16 max-w-7xl mx-auto px-4 md:px-6">
+      <div className="bg-white rounded-3xl md:rounded-[40px] shadow-2xl border border-slate-100 p-6 md:p-12 flex flex-wrap justify-center xl:justify-between items-center gap-8 md:gap-12">
         {stats.map((stat, i) => (
           <div key={i} className="flex items-center gap-4 group">
             <div className="w-16 h-16 rounded-2xl bg-brand-blue-light/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
@@ -256,11 +256,11 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
-              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-6 py-2 flex items-center justify-center shadow-lg group-hover:shadow-xl`}>
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-4 md:px-6 py-1 md:py-2 flex items-center justify-center shadow-lg group-hover:shadow-xl`}>
                 <img
                   src="/assets/logo.png"
                   alt="5 Star Project Solution"
-                  className={`transition-all duration-300 object-contain ${isScrolled ? 'h-10 md:h-12' : 'h-14 md:h-16'}`}
+                  className={`transition-all duration-300 object-contain ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'}`}
                 />
               </div>
               <div className={`hidden lg:block transition-colors duration-300 ${isScrolled ? 'text-brand-blue' : 'text-white'}`}>
@@ -380,6 +380,7 @@ const Hero = () => {
             transition={{ duration: 1.5, ease: "easeOut" }}
             alt="Professional Cleaning"
             className="absolute inset-0 w-full h-full object-cover"
+            referrerPolicy="no-referrer"
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent z-[1]"></div>
@@ -547,6 +548,7 @@ const Expectations = () => {
                 src="https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&q=80&w=1200"
                 alt="Professional Cleaning"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
             {/* Call to Action Card over Image */}
@@ -1008,7 +1010,7 @@ const Footer = () => {
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/85772741"
+      href="https://wa.me/6585772741"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
@@ -1032,7 +1034,7 @@ const WhatsAppButton = () => {
 
 export default function App() {
   return (
-    <div className="relative font-sans text-slate-900 bg-slate-900">
+    <div className="relative font-sans text-slate-900 bg-slate-900 overflow-x-hidden">
       <Navbar />
       <div className="sticky top-0 z-0 h-[110vh] w-full">
         <Hero />
