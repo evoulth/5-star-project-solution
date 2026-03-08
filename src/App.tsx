@@ -252,7 +252,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
+      <nav className={`w-full transition-all duration-300  ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
@@ -269,12 +269,12 @@ const Navbar = () => {
               </div>
             </a>
 
-            <div className="hidden md:flex items-center gap-4 lg:gap-8 ml-4">
+            <div className="hidden md:flex items-center gap-7 lg:gap-10 ml-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-brand-blue-light ${isScrolled ? 'text-slate-700' : 'text-white'}`}
+                  className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-brand-blue-light gap-5 ml-4 ${isScrolled ? 'text-slate-700' : 'text-white'}`}
                 >
                   {link.name}
                 </a>
@@ -282,11 +282,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-right gap-1 ml-4">
             <div className={`hidden sm:flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
               <Phone className="w-4 h-4" />
               <div className="text-right">
-                <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Quick Contact</div>
+                <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1 ">Quick Contact</div>
                 <div className="text-sm font-black leading-none">8577 2741</div>
               </div>
             </div>
@@ -509,7 +509,7 @@ const Expectations = () => {
               Reliable • Efficient • Trusted
             </div>
             <h2 className="text-brand-blue font-black uppercase tracking-widest mb-4">What to Expect</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Professionalism in <span className="text-brand-blue">Every Detail</span></h3>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Professionalism in <span className="text-brand-blue">Detail</span></h3>
 
             <div className="bg-slate-50 p-8 rounded-[40px] border border-slate-100 mb-10">
               <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-6">Our Services Checklist:</h4>
