@@ -260,7 +260,7 @@ const Navbar = () => {
                 <img
                   src="/assets/logo.png"
                   alt="5 Star Project Solution"
-                  className={`transition-all duration-300 object-contain scale-[1.6] ${isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-16'}`}
+                  className={`transition-all duration-300 object-contain scale-[1.6] ${isScrolled ? 'h-10 md:h-20' : 'h-15 md:h-20'}`}
                 />
               </div>
               <div className={`hidden lg:block transition-colors duration-300 ${isScrolled ? 'text-brand-blue' : 'text-white'}`}>
