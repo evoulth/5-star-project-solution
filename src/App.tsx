@@ -934,8 +934,8 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex items-center">
               <a href="#" className="group flex items-center gap-3">
-                <div className="relative overflow-hidden rounded-[50%_50%_50%_50%_/_60%_60%_40%_40%] border-2 border-white/20 bg-white p-1 shadow-xl">
-                  <img src="/assets/logo.png" alt="5 Star Project Solution" className="h-14 w-auto object-contain" />
+                <div className="relative overflow-hidden rounded-full border-2 border-white/20 bg-white px-5 py-0 flex items-center justify-center shadow-xl h-12 w-32">
+                  <img src="/assets/logo.png" alt="5 Star Project Solution" className="h-10 w-auto object-contain scale-[1.6]" />
                 </div>
                 <div className="text-white">
                   <div className="text-xl font-bold leading-none">5 STAR PROJECT</div>
