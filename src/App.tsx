@@ -256,11 +256,11 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
-              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-4 md:px-6 py-0.5 md:py-1 flex items-center justify-center shadow-lg group-hover:shadow-xl`}>
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px-8 py-0 flex items-center justify-center shadow-lg group-hover:shadow-xl h-12 md:h-20 w-32 md:w-52`}>
                 <img
                   src="/assets/logo.png"
                   alt="5 Star Project Solution"
-                  className={`transition-all duration-300 object-contain ${isScrolled ? 'h-11 md:h-13' : 'h-14 md:h-18'}`}
+                  className={`transition-all duration-300 object-contain scale-[1.6] ${isScrolled ? 'h-8 md:h-12' : 'h-10 md:h-16'}`}
                 />
               </div>
               <div className={`hidden lg:block transition-colors duration-300 ${isScrolled ? 'text-brand-blue' : 'text-white'}`}>
