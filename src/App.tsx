@@ -147,57 +147,233 @@ const FAQS: FAQ[] = [
 
 // --- Components ---
 
-const HERO_IMAGES = [
-  '/assets/hero-1.jpeg',
-  '/assets/hero-2.jpeg',
-  '/assets/hero-3.jpeg'
+const HERO_SLIDES = [
+  {
+    image: '/assets/hero-1.jpeg',
+    tagline: 'Reliable • Efficient • Trusted',
+    title: 'PROFESSIONAL',
+    highlight: 'CLEANING SERVICES',
+    description: 'Experience the gold standard in hygiene with our expert team.'
+  },
+  {
+    image: '/assets/hero-2.jpeg',
+    tagline: 'Deep Cleaning Experts',
+    title: 'SPARKLING RESULTS',
+    highlight: 'EVERY SINGLE TIME',
+    description: 'From corner to corner, we ensure your space is spotless and sanitized.'
+  },
+  {
+    image: '/assets/hero-3.jpeg',
+    tagline: 'Eco-Friendly Solutions',
+    title: 'HEALTHY SPACES',
+    highlight: 'FOR YOUR FAMILY',
+    description: 'We use non-toxic products that are safe for kids, pets, and the environment.'
+  }
 ];
+
+const Stats = () => {
+  const stats = [
+    { label: 'Cleans Completed', value: '100k+', icon: <CheckCircle2 className="w-6 h-6" /> },
+    { label: 'Happy Clients', value: '500+', icon: <Users className="w-6 h-6" /> },
+    { label: 'Service Areas', value: '30+', icon: <MapPin className="w-6 h-6" /> },
+    { label: 'Expert Cleaners', value: '50+', icon: <Shield className="w-6 h-4" /> }
+  ];
+
+  return (
+    <section className="relative z-20 -mt-16 max-w-7xl mx-auto px-6">
+      <div className="bg-white rounded-[40px] shadow-2xl border border-slate-100 p-8 md:p-12 flex flex-wrap justify-center xl:justify-between items-center gap-8 md:gap-12">
+        {stats.map((stat, i) => (
+          <div key={i} className="flex items-center gap-4 group">
+            <div className="w-16 h-16 rounded-2xl bg-brand-blue-light/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+              {stat.icon}
+            </div>
+            <div>
+              <div className="text-3xl font-black text-brand-blue leading-none mb-1">{stat.value}</div>
+              <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
+            </div>
+            {i < stats.length - 1 && <div className="hidden xl:block w-px h-12 bg-slate-100 ml-8"></div>}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const TopBar = () => {
+  return (
+    <div className="bg-brand-blue text-white py-2 px-4 md:px-8 flex justify-between items-center text-xs md:text-sm border-b border-white/10">
+      <div className="flex items-center gap-6">
+        <div className="flex items-center gap-2">
+          <Clock className="w-3.5 h-3.5 text-brand-blue-light" />
+          <span>Mon - Sat: 08:30 - 20:30</span>
+        </div>
+        <div className="hidden md:flex items-center gap-2 border-l border-white/20 pl-6">
+          <Mail className="w-3.5 h-3.5 text-brand-blue-light" />
+          <span>5starprojectsolutions.sg@gmail.com</span>
+        </div>
+      </div>
+      <div className="flex items-center gap-4">
+        <a href="#" className="hover:text-brand-blue-light transition-colors"><Facebook className="w-4 h-4" /></a>
+        <a href="#" className="hover:text-brand-blue-light transition-colors"><Instagram className="w-4 h-4" /></a>
+        <a href="#" className="hover:text-brand-blue-light transition-colors"><Linkedin className="w-4 h-4" /></a>
+      </div>
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
+  const navLinks = [
+    { name: 'Home', href: '#' },
+    { name: 'Services', href: '#services' },
+    { name: 'Why Us', href: '#why-us' },
+    { name: 'Gallery', href: '#gallery' },
+    { name: 'FAQ', href: '#faq' }
+  ];
 
   return (
-    <nav className="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
-      <div className="w-full px-4 md:px-8 flex justify-between items-start">
-        <div className="flex items-center">
-          <a href="#" className="flex items-center transition-all">
-            <img src="/assets/WhatsApp Image 2026-03-06 at 10.37.10 PM.png" alt="5 Star Project Solution" className="h-16 md:h-20 w-auto logo-glow" />
-          </a>
-        </div>
+    <header className="fixed w-full z-50 top-0 transition-all duration-300">
+      <AnimatePresence>
+        {!isScrolled && (
+          <motion.div
+            initial={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden"
+          >
+            <TopBar />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+          <div className="flex items-center gap-4 md:gap-8">
+            <a href="#" className="group flex items-center gap-3">
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-[50%_50%_50%_50%_/_60%_60%_40%_40%] border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white p-1`}>
+                <img
+                  src="/assets/logo.png"
+                  alt="5 Star Project Solution"
+                  className={`transition-all duration-300 object-contain ${isScrolled ? 'h-10 md:h-12' : 'h-14 md:h-16'}`}
+                />
+              </div>
+              <div className={`hidden lg:block transition-colors duration-300 ${isScrolled ? 'text-brand-blue' : 'text-white'}`}>
+                <div className="text-xl font-bold leading-none">5 STAR PROJECT</div>
+                <div className="text-[10px] tracking-[0.2em] font-medium opacity-80 uppercase">Solution Cleaning</div>
+              </div>
+            </a>
 
-        {/* Call to Action Button */}
-      </div>
-    </nav>
+            <div className="hidden md:flex items-center gap-4 lg:gap-8 ml-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-brand-blue-light ${isScrolled ? 'text-slate-700' : 'text-white'}`}
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <div className={`hidden sm:flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
+              <Phone className="w-4 h-4" />
+              <div className="text-right">
+                <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Quick Contact</div>
+                <div className="text-sm font-black leading-none">8577 2741</div>
+              </div>
+            </div>
+
+            <a href="#booking" className={`hidden lg:flex btn-${isScrolled ? 'primary' : 'secondary'} py-3 px-6 text-sm uppercase tracking-widest font-black gap-2 items-center group`}>
+              Request a Quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </a>
+
+            <button
+              className={`md:hidden p-2 rounded-xl border transition-colors ${isScrolled ? 'text-brand-blue border-brand-blue/20' : 'text-white border-white/20 bg-white/5'}`}
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[60] bg-white text-brand-blue p-8 flex flex-col"
+          >
+            <div className="flex justify-between items-center mb-12">
+              <div className="overflow-hidden rounded-full border-2 border-brand-blue bg-white p-1">
+                <img src="/assets/logo.png" alt="Logo" className="h-10 w-auto" />
+              </div>
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-slate-100 rounded-full">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-2xl font-black uppercase tracking-tighter hover:pl-4 transition-all"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+            <div className="mt-auto space-y-6">
+              <div className="flex items-center gap-4 bg-slate-50 p-6 rounded-3xl">
+                <Phone className="w-6 h-6" />
+                <div>
+                  <div className="text-xs font-bold text-slate-400 uppercase">Call Us Anytime</div>
+                  <div className="text-xl font-black">8577 2741</div>
+                </div>
+              </div>
+              <a href="#booking" onClick={() => setIsMobileMenuOpen(false)} className="w-full btn-primary py-5 text-center text-lg uppercase tracking-widest font-black block">
+                Get a Free Quote
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 
 const Hero = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % HERO_IMAGES.length);
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
+  const slide = HERO_SLIDES[currentSlide];
+
   return (
-    <section className="relative h-[90vh] flex items-center overflow-hidden">
+    <section className="relative h-[110vh] flex items-center overflow-hidden">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0 bg-slate-900">
         <AnimatePresence mode="wait">
           <motion.img
-            key={currentImage}
-            src={HERO_IMAGES[currentImage]}
+            key={currentSlide}
+            src={slide.image}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
@@ -206,33 +382,40 @@ const Hero = () => {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent z-[1]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-24 md:pt-28">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl text-white"
-        >
-          <div className="inline-flex items-center gap-2 bg-brand-blue/20 border border-brand-blue/30 px-4 py-1 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-brand-white" />
-            <span className="text-sm font-medium text-brand-white font-bold">Trusted by 500+ Clients</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            Professional Cleaning Services <span className="text-brand-blue-light">You Can Trust</span>
-          </h1>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#booking" className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto">
-              Book a Cleaning <ArrowRight className="w-4 h-4" />
-            </a>
-
-          </div>
-        </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl text-white"
+          >
+            <div className="inline-flex items-center gap-2 bg-brand-blue/20 border border-brand-blue/30 px-4 py-1 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-brand-white" />
+              <span className="text-sm font-medium text-brand-white font-bold">{slide.tagline}</span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 uppercase tracking-tight">
+              {slide.title} <span className="text-brand-blue-light">{slide.highlight}</span>
+            </h1>
+            <p className="text-lg text-slate-200 mb-10 max-w-lg leading-relaxed">
+              {slide.description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#booking" className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto py-4 px-8 text-lg">
+                Book a Cleaning <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Floating Stats */}
-      <div className="absolute bottom-12 right-12 hidden lg:block">
+      <div className="absolute bottom-48 right-12 hidden lg:block">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -301,6 +484,80 @@ const Services = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Expectations = () => {
+  const items = [
+    { title: 'Customized Schedule', desc: 'We work around your timing and specific needs.', icon: <Clock className="w-5 h-5 text-brand-blue" /> },
+    { title: 'Security & Privacy', desc: 'Vetted professionals you can trust in your space.', icon: <Shield className="w-5 h-5 text-brand-blue" /> },
+    { title: 'Modern Equipment', desc: 'Latest cleaning technology for the best results.', icon: <Droplets className="w-5 h-5 text-brand-blue" /> },
+    { title: '24-hr Warranty', desc: 'Not satisfied? We will re-clean for free.', icon: <CheckCircle2 className="w-5 h-5 text-brand-blue" /> },
+    { title: 'Eco-Friendly', desc: 'Safe products for your family and pets.', icon: <Sparkles className="w-5 h-5 text-brand-blue" /> }
+  ];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="inline-block bg-brand-blue-light/10 text-brand-blue px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6 border border-brand-blue/10">
+              Reliable • Efficient • Trusted
+            </div>
+            <h2 className="text-brand-blue font-black uppercase tracking-widest mb-4">What to Expect</h2>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Professionalism in <span className="text-brand-blue">Every Detail</span></h3>
+
+            <div className="bg-slate-50 p-8 rounded-[40px] border border-slate-100 mb-10">
+              <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-6">Our Services Checklist:</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+                {[
+                  'Sweep, Mop & Vacuum Floors',
+                  'Disinfect High-Touch Surfaces',
+                  'Restroom & Common Area Cleaning',
+                  'Maintain Hygiene Standards'
+                ].map((text, i) => (
+                  <div key={i} className="flex gap-3 items-start">
+                    <CheckCircle2 className="w-5 h-5 text-brand-blue shrink-0 mt-0.5" />
+                    <span className="text-slate-700 font-bold leading-tight">{text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {items.map((item, i) => (
+                <div key={i} className="flex gap-4 group">
+                  <div className="shrink-0 w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-brand-blue mb-1">{item.title}</h4>
+                    <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="relative z-10 rounded-[60px] overflow-hidden shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&q=80&w=1200"
+                alt="Professional Cleaning"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {/* Call to Action Card over Image */}
+            <div className="absolute -bottom-10 -left-10 z-20 bg-brand-blue text-white p-8 rounded-[40px] shadow-2xl space-y-4 max-w-sm hidden xl:block">
+              <div className="text-xl font-black">Call or WhatsApp Now!</div>
+              <div className="text-4xl font-black tracking-tight">8577 2741</div>
+              <div className="pt-2">
+                <a href="#booking" className="btn-secondary py-3 px-6 text-sm w-full text-center">Book Now</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -479,6 +736,15 @@ const BookingForm = () => {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <div className="bg-brand-blue-light p-4 rounded-2xl text-brand-blue">
+                <Users className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-sm text-slate-500 font-medium">Ops Manager</div>
+                <div className="text-xl font-bold text-brand-blue">Syed Shah</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="bg-brand-blue-light p-4 rounded-2xl text-brand-blue">
                 <Phone className="w-6 h-6" />
               </div>
               <div>
@@ -492,7 +758,7 @@ const BookingForm = () => {
               </div>
               <div>
                 <div className="text-sm text-slate-500 font-medium">Email Us</div>
-                <div className="text-xl font-bold text-brand-blue">hello@5starcleaning.com</div>
+                <div className="text-xl font-bold text-brand-blue text-sm md:text-lg">5starprojectsolutions.sg@gmail.com</div>
               </div>
             </div>
           </div>
@@ -665,8 +931,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
             <div className="flex items-center">
-              <a href="#" className="flex items-center p-2 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
-                <img src="/assets/WhatsApp Image 2026-03-06 at 10.37.10 PM.png" alt="5 Star Project Solution" className="h-14 w-auto logo-glow rounded-xl" />
+              <a href="#" className="group flex items-center gap-3">
+                <div className="relative overflow-hidden rounded-[50%_50%_50%_50%_/_60%_60%_40%_40%] border-2 border-white/20 bg-white p-1 shadow-xl">
+                  <img src="/assets/logo.png" alt="5 Star Project Solution" className="h-14 w-auto object-contain" />
+                </div>
+                <div className="text-white">
+                  <div className="text-xl font-bold leading-none">5 STAR PROJECT</div>
+                  <div className="text-[10px] tracking-[0.2em] font-medium opacity-60 uppercase">Solution Cleaning</div>
+                </div>
               </a>
             </div>
             <p className="text-slate-400 leading-relaxed">
@@ -715,7 +987,7 @@ const Footer = () => {
               </li>
               <li className="flex gap-4">
                 <Mail className="w-6 h-6 text-brand-green shrink-0" />
-                <span>hello@5starcleaning.com</span>
+                <span>5starprojectsolutions.sg@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -762,11 +1034,13 @@ export default function App() {
   return (
     <div className="relative font-sans text-slate-900 bg-slate-900">
       <Navbar />
-      <div className="sticky top-0 z-0 h-[90vh] w-full">
+      <div className="sticky top-0 z-0 h-[110vh] w-full">
         <Hero />
       </div>
       <main className="relative z-10 w-full bg-white shadow-2xl">
+        <Stats />
         <Services />
+        <Expectations />
         <WhyChooseUs />
         <Gallery />
         <Testimonials />
