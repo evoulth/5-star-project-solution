@@ -385,7 +385,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent z-[1]"></div>
       </div>
 
-<<<<<<< HEAD
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20">
         <AnimatePresence mode="wait">
           <motion.div
@@ -413,30 +412,6 @@ const Hero = () => {
             </div>
           </motion.div>
         </AnimatePresence>
-=======
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full pt-24 md:pt-28">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl text-white"
-        >
-          <div className="inline-flex items-center gap-2 bg-brand-blue/20 border border-brand-blue/30 px-4 py-1 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-brand-white" />
-            <span className="text-sm font-medium text-brand-white font-bold">Trusted by 500+ Clients</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-            Professional Cleaning Services <span className="text-brand-blue-light">You Can Trust</span>
-          </h1>
-         
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#booking" className="btn-secondary flex items-center justify-center gap-2 w-full sm:w-auto">
-              Book a Cleaning <ArrowRight className="w-4 h-4" />
-            </a>
-
-          </div>
-        </motion.div>
->>>>>>> 33f41650ce62b963851bfe84fe67fae54aca0b30
       </div>
 
       {/* Floating Stats */}
