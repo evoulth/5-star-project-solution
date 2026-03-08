@@ -256,7 +256,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
-              <div className={`relative overflow-hidden transition-all duration-500 rounded-[50%_50%_50%_50%_/_60%_60%_40%_40%] border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white p-1`}>
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-6 py-2 flex items-center justify-center shadow-lg group-hover:shadow-xl`}>
                 <img
                   src="/assets/logo.png"
                   alt="5 Star Project Solution"
@@ -492,11 +492,11 @@ const Services = () => {
 
 const Expectations = () => {
   const items = [
-    { title: 'Customized Schedule', desc: 'We work around your timing and specific needs.', icon: <Clock className="w-5 h-5 text-brand-blue" /> },
-    { title: 'Security & Privacy', desc: 'Vetted professionals you can trust in your space.', icon: <Shield className="w-5 h-5 text-brand-blue" /> },
-    { title: 'Modern Equipment', desc: 'Latest cleaning technology for the best results.', icon: <Droplets className="w-5 h-5 text-brand-blue" /> },
-    { title: '24-hr Warranty', desc: 'Not satisfied? We will re-clean for free.', icon: <CheckCircle2 className="w-5 h-5 text-brand-blue" /> },
-    { title: 'Eco-Friendly', desc: 'Safe products for your family and pets.', icon: <Sparkles className="w-5 h-5 text-brand-blue" /> }
+    { title: 'Customized Schedule', desc: 'We work around your timing and specific needs.', icon: <Clock className="w-5 h-5" /> },
+    { title: 'Security & Privacy', desc: 'Vetted professionals you can trust in your space.', icon: <Shield className="w-5 h-5" /> },
+    { title: 'Modern Equipment', desc: 'Latest cleaning technology for the best results.', icon: <Droplets className="w-5 h-5" /> },
+    { title: '24-hr Warranty', desc: 'Not satisfied? We will re-clean for free.', icon: <CheckCircle2 className="w-5 h-5" /> },
+    { title: 'Eco-Friendly', desc: 'Safe products for your family and pets.', icon: <Sparkles className="w-5 h-5" /> }
   ];
 
   return (
@@ -530,7 +530,7 @@ const Expectations = () => {
             <div className="space-y-6">
               {items.map((item, i) => (
                 <div key={i} className="flex gap-4 group">
-                  <div className="shrink-0 w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                  <div className="shrink-0 w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                     {item.icon}
                   </div>
                   <div>
