@@ -291,13 +291,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-right gap-5 ml-5">
-          <a href="tel:+6585772741" className={`flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 cursor-pointer ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
-  <Phone className="w-4 h-4" />
-  <div className="text-right">
-    <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Quick Contact</div>
-    <div className="text-sm font-black leading-none">8577 2741</div>
-  </div>
-</a>
+         
 
             <a href="#booking" className={`hidden lg:flex btn-${isScrolled ? 'primary' : 'secondary'} py-3 px-6 text-sm uppercase tracking-widest font-black gap-2 items-center group`}>
               Request a Quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
