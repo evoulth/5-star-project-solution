@@ -256,7 +256,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-5 md:px-10 flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
-              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px-8 py-0 flex items-center justify-center shadow-lg group-hover:shadow-xl h-12 md:h-20 w-32 md:w-52`}>
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px-8 py-0 flex items justify-center shadow-lg group-hover:shadow-xl h-12 md:h-20 w-32 md:w-52`}>
                 <img
                   src="/assets/logo.png"
                   alt="5 Star Project Solution"
@@ -286,8 +286,12 @@ const Navbar = () => {
             <div className={`hidden sm:flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
               <Phone className="w-4 h-4" />
               <div className="text-right">
-                <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1 ">Quick Contact</div>
+<a href="tel:+919876543210" class="quick-contact-btn">
+   <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1 ">Quick Contact</div>
                 <div className="text-sm font-black leading-none">8577 2741</div>
+</a>
+
+               
               </div>
             </div>
 
