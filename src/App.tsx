@@ -212,6 +212,9 @@ const TopBar = () => {
           <Mail className="w-3.5 h-3.5 text-brand-blue-light" />
           <span>5starprojectsolutions.sg@gmail.com</span>
         </div>
+        <div className="" >
+          <a href="tel:+6585772741" className="hidden md:flex items-center gap-5 border-l border-white/20 pl-6"><Phone className="w-3.5 h-3.5 text-brand-blue-light" /> Click Here to Quick Call</a>
+        </div>
       </div>
       <div className="flex items-center gap-4">
         <a href="#" className="hover:text-brand-blue-light transition-colors"><Facebook className="w-4 h-4" /></a>
