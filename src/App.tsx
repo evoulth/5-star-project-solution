@@ -546,24 +546,7 @@ const Expectations = () => {
               ))}
             </div>
           </div>
-          <div className="relative">
-            <div className="relative z-10 rounded-[60px] overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1581578731548-c64695ce6958?auto=format&fit=crop&q=80&w=1200"
-                alt="Professional Cleaning"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-            {/* Call to Action Card over Image */}
-            <div className="absolute -bottom-10 -left-10 z-20 bg-brand-blue text-white p-8 rounded-[40px] shadow-2xl space-y-4 max-w-sm hidden xl:block">
-              <div className="text-xl font-black">Call or WhatsApp Now!</div>
-              <div className="text-4xl font-black tracking-tight">8577 2741</div>
-              <div className="pt-2">
-                <a href="#booking" className="btn-secondary py-3 px-6 text-sm w-full text-center">Book Now</a>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>
