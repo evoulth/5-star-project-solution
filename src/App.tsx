@@ -291,7 +291,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-right gap-5 ml-5">
-          <a href="tel:+6585772741" className={`hidden sm:flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 cursor-pointer ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
+          <a href="tel:+6585772741" className={`flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 cursor-pointer ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
   <Phone className="w-4 h-4" />
   <div className="text-right">
     <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Quick Contact</div>
