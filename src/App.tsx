@@ -217,6 +217,7 @@ const TopBar = () => {
         <a href="#" className="hover:text-brand-blue-light transition-colors"><Facebook className="w-4 h-4" /></a>
         <a href="#" className="hover:text-brand-blue-light transition-colors"><Instagram className="w-4 h-4" /></a>
         <a href="#" className="hover:text-brand-blue-light transition-colors"><Linkedin className="w-4 h-4" /></a>
+        <a href="tel:+65 8577 2741" className="hover:text-brand-blue-light transition-colors"><Phone className="w-4 h-4"/></a>
       </div>
     </div>
   );
