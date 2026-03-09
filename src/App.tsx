@@ -253,14 +253,14 @@ const Navbar = () => {
         )}
       </AnimatePresence>
       <nav className={`w-full transition-all duration-300  ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
               <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px-8 py-0 flex items-center justify-center shadow-lg group-hover:shadow-xl h-12 md:h-20 w-32 md:w-52`}>
                 <img
                   src="/assets/logo.png"
                   alt="5 Star Project Solution"
-                  className={`transition-all duration-300 object-contain scale-[1.6] ${isScrolled ? 'h-10 md:h-20' : 'h-15 md:h-20'}`}
+                  className={`transition-all duration-300 object-contain scale-[2.0] ${isScrolled ? 'h-20 md:h-25' : 'h-17 md:h-23'}`}
                 />
               </div>
               <div className={`hidden lg:block transition-colors duration-300 ${isScrolled ? 'text-brand-blue' : 'text-white'}`}>
@@ -509,7 +509,7 @@ const Expectations = () => {
               Reliable • Efficient • Trusted
             </div>
             <h2 className="text-brand-blue font-black uppercase tracking-widest mb-4">What to Expect</h2>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Where Professionalism <span className="text-brand-blue">Meets Passion</span></h3>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">Professionalism in <span className="text-brand-blue">Detail</span></h3>
 
             <div className="bg-slate-50 p-8 rounded-[40px] border border-slate-100 mb-10">
               <h4 className="text-sm font-black uppercase tracking-widest text-slate-400 mb-6">Our Services Checklist:</h4>
