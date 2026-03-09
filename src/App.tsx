@@ -253,8 +253,8 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <nav className={`w-full justify-center transition-all duration-300  ${isScrolled ? ' bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
-        <div className="max-w-7xl mx-15 px-5 md:px- flex justify-between items-center">
+      <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
+        <div className="max-w-7xl mx-auto px-5 md:px-10 flex justify-between items-center w-full">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
               <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px- py-0 flex items justify-center  group-hover:shadow-xl h-12 md:h-20 w-32 md:w-50`}>
@@ -317,10 +317,8 @@ const Navbar = () => {
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-[60] bg-white text-brand-blue p-8 flex flex-col"
           >
-            <div className="flex justify-between items-center mb-12">
-              <div className="overflow-hidden rounded-full border-2 border-brand-blue bg-white p-1">
-                <img src="/assets/logo.png" alt="Logo" className="h-10 w-auto" />
-              </div>
+            <div className="flex justify-\ items-center mb-12">
+              
               <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-slate-100 rounded-full">
                 <X className="w-6 h-6" />
               </button>
