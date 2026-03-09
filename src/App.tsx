@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
   Phone,
@@ -181,9 +182,9 @@ const Stats = () => {
 
   return (
     <section className="relative z-20 -mt-16 max-w-7xl mx-auto px-4 md:px-6">
-      <div className="bg-white rounded-3xl md:rounded-[40px] shadow-2xl border border-slate-100 p-6 md:p-12 flex flex-wrap justify-center xl:justify-between items-center gap-8 md:gap-12">
+      <div className="bg-white rounded-3xl md:rounded-[40px] shadow-2xl border border-slate-100 p-6 md:p-12 grid grid-cols-2 xl:flex :justify-between items-center gap-6 md:gap-12 place-items-center">
         {stats.map((stat, i) => (
-          <div key={i} className="flex items-center gap-4 group">
+          <div key={i} className="flex item-center mr-auto">
             <div className="w-16 h-16 rounded-2xl bg-brand-blue-light/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
               {stat.icon}
             </div>
@@ -234,7 +235,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Services', href: '#services' },
-    { name: 'Why Us', href: '#why-us' },
+    { name: 'Why Us', href: '#why us' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'FAQ', href: '#faq' }
   ];
@@ -252,16 +253,23 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <nav className={`w-full transition-all duration-300  ${isScrolled ? 'bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
-        <div className="max-w-7xl mx-auto px-5 md:px-10 flex justify-between items-center">
+      <nav className={`w-full justify-center transition-all duration-300  ${isScrolled ? ' bg-white/95 backdrop-blur-md py-3 shadow-lg' : 'bg-transparent py-5'}`}>
+        <div className="max-w-7xl mx-15 px-5 md:px- flex justify-between items-center">
           <div className="flex items-center gap-4 md:gap-8">
             <a href="#" className="group flex items-center gap-3">
-              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px-8 py-0 flex items justify-center shadow-lg group-hover:shadow-xl h-12 md:h-20 w-32 md:w-52`}>
-                <img
-                  src="/assets/logo.png"
-                  alt="5 Star Project Solution"
-                  className={`transition-all duration-300 object-contain scale-[2.0] ${isScrolled ? 'h-20 md:h-25' : 'h-17 md:h-23'}`}
-                />
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2 ${isScrolled ? 'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px- py-0 flex items justify-center  group-hover:shadow-xl h-12 md:h-20 w-32 md:w-50`}>
+                {/* Desktop Logo */}
+<img
+  src="/assets/logo.png"
+  alt="5 Star Project Solution"
+  className="hidden md:block transition-all duration-300 object-contain scale-[2.0] w-full h-full"
+/>
+{/* Mobile Logo */}
+<img
+  src="/assets/logo.png"
+  alt="5 Star Project Solution"
+  className="block md:hidden transition-all duration-300 object-contain w-20 h-15 scale-[2.0]"
+/>
               </div>
               <div className={`hidden lg:block transition-colors duration-300 ${isScrolled ? 'text-brand-blue' : 'text-white'}`}>
                 <div className="text-xl font-bold leading-none">5 STAR PROJECT</div>
@@ -269,12 +277,12 @@ const Navbar = () => {
               </div>
             </a>
 
-            <div className="hidden md:flex items-center gap-7 lg:gap-10 ml-4">
+            <div className="hidden md:flex items-center gap-7 lg:gap-10 ml-8">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-bold uppercase tracking-wider transition-colors hover:text-brand-blue-light gap-5 ml-4 ${isScrolled ? 'text-slate-700' : 'text-white'}`}
+                  className={`text-sm flex font-bold uppercase tracking-wider transition-colors hover:text-brand-blue gap-5 ml-4 ${isScrolled ? 'text-slate-700' : 'text-white'}`}
                 >
                   {link.name}
                 </a>
@@ -282,18 +290,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex items-right gap-1 ml-4">
-            <div className={`hidden sm:flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
-              <Phone className="w-4 h-4" />
-              <div className="text-right">
-<a href="tel:+919876543210" class="quick-contact-btn">
-   <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1 ">Quick Contact</div>
-                <div className="text-sm font-black leading-none">8577 2741</div>
+          <div className="flex items-right gap-5 ml-5">
+          <a href="tel:+6585772741" className={`hidden sm:flex items-center gap-3 p-2 px-4 rounded-2xl border transition-all duration-300 cursor-pointer ${isScrolled ? 'border-brand-blue text-brand-blue' : 'border-white/20 text-white bg-white/5 backdrop-blur-sm'}`}>
+  <Phone className="w-4 h-4" />
+  <div className="text-right">
+    <div className="text-[10px] uppercase font-bold opacity-60 leading-none mb-1">Quick Contact</div>
+    <div className="text-sm font-black leading-none">8577 2741</div>
+  </div>
 </a>
-
-               
-              </div>
-            </div>
 
             <a href="#booking" className={`hidden lg:flex btn-${isScrolled ? 'primary' : 'secondary'} py-3 px-6 text-sm uppercase tracking-widest font-black gap-2 items-center group`}>
               Request a Quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -425,18 +429,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="glass-card p-6 rounded-2xl flex gap-8"
+          className="glass-card p-6 rounded-2xl flex flex-wrap gap-6"
         >
           <div className="text-center">
             <div className="text-3xl font-bold text-brand-blue">10k+</div>
             <div className="text-xs text-slate-500 uppercase tracking-wider">Cleanings</div>
           </div>
-          <div className="w-px bg-slate-200"></div>
+          <div className="hidden sm:block w-px bg-slate-200"></div>
           <div className="text-center">
             <div className="text-3xl font-bold text-brand-blue">99%</div>
             <div className="text-xs text-slate-500 uppercase tracking-wider">Satisfaction</div>
           </div>
-          <div className="w-px bg-slate-200"></div>
+          <div className="hidden sm:block w-px bg-slate-200"></div>
           <div className="text-center">
             <div className="text-3xl font-bold text-brand-blue">50+</div>
             <div className="text-xs text-slate-500 uppercase tracking-wider">Experts</div>
@@ -546,7 +550,12 @@ const Expectations = () => {
               ))}
             </div>
           </div>
-          
+          <div className="relative">
+            <div className="relative z-10 rounded-[60px] overflow-hidden shadow-2xl">
+             
+            </div>
+            
+          </div>
         </div>
       </div>
     </section>
@@ -920,10 +929,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div className="space-y-6">
             <div className="flex items-center">
-              <a href="#" className="group flex items-center gap-3">
-                <div className="relative overflow-hidden rounded-full border-2  bg-white px-5 md:px-8 py-0 flex items-center justify-center shadow-lg group-hover:shadow-xl h-12 md:h-20 w-32 md:w-52">
-                  <img src="/assets/logo.png" alt="5 Star Project Solution" className="h-19 w-auto object-contain scale-[2.3]" />
-                </div>
+              <a href="#" className=" flex items-center gap-3">
+              <div className={`relative overflow-hidden transition-all duration-500 rounded-full border-2  'border-brand-blue shadow-md' : 'border-white'} bg-white px-5 md:px-8 py-0 flex items justify-center shadow-lg group-hover:shadow-xlh-20 md:h-20 w-48 md:w-52`}>
+                {/* Desktop Logo */}
+<img
+  src="/assets/logo.png"
+  alt="5 Star Project Solution"
+  className="hidden md:block transition-all duration-300 object-contain scale-[2.0] w-full h-full"
+/>
+{/* Mobile Logo */}
+<img
+  src="/assets/logo.png"
+  alt="5 Star Project Solution"
+  className="block md:hidden transition-all duration-300 object-contain w-40  h-15 scale-[2.0]"
+/>
+              </div>
                 <div className="text-white">
                   <div className="text-xl font-bold leading-none">5 STAR PROJECT</div>
                   <div className="text-[10px] tracking-[0.2em] font-medium opacity-60 uppercase">Solution Cleaning</div>
